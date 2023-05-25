@@ -20,9 +20,9 @@ char **split_line(char *ptr);
 int execute_args(char **args);
 int new_process(char **args);
 char *read_stream(void);
-int _cd(char **args);
-int _exit(char **args);
-int _env(char **args);
-int _help(char **args);
+int cd_cmd(char **args);
+int exit_cmd(char **args);
+int env_cmd(char **args);
+int help_cmd(char **args);
 
 #endif
