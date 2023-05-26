@@ -27,8 +27,6 @@ int own_env(char **args)
 {
 	char **env = environ;
 
-	if (strcmp(args[0], "env") == 0)
-	{
 	while (*env)
 	{
 		printf("%s\n", *env);
@@ -45,23 +43,25 @@ int own_env(char **args)
 
 int own_help(char **args)
 {
+	printf("=== Custom Shell Help ===\n");
+	printf("Available commands:\n");
+	printf("cd [directory] - Change the current directory\n");
+	printf("exit - Terminate the shell\n");
+	printf("env - Display environment variables\n");
+	printf("help - Display this help message\n");
+	return (1);
+}
+
+/**
+ * main - main function
+ * Return: result
+ */
+
+int main(void)
+{
 	char *args[] = {NULL};
 
-	if (args[0] == NULL)
-	{
-		printf("=== Custom Shell Help ===\n");
-		printf("Available commands:\n");
-		printf("cd [directory] - Change the current directory\n");
-		printf("exit - Terminate the shell\n");
-		printf("env - Display environment variables\n");
-		printf("help - Display this help message\n");
-		return (1);
-	}
-	else if (strcmp(args[0], "help") == 0)
-	{
-		own_help(args);
-		return (1);
-	}
-	else
-		return (1);
+	own_env(args);
+
+	return (0);
 }

@@ -24,3 +24,17 @@ int own_cd(char **args)
 		return (1);
 	}
 }
+
+/**
+ * main - main function
+ * Return: 0
+ */
+
+int main(void)
+{
+	char *args[] = {"cd", "/path/to/directory", NULL};
+
+	own_cd(args);
+
+	return (0);
+}
