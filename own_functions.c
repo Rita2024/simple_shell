@@ -45,7 +45,7 @@ int own_env(char **args)
 
 int own_help(char **args)
 {
-	args(void);
+	(void)args;
 
 	printf("=== Custom Shell Help ===\n");
 	printf("Available commands:\n");
