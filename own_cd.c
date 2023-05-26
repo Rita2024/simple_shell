@@ -26,11 +26,11 @@ int own_cd(char **args)
 
 
 /**
- * main - main function
+ * main_cd - main function
  * Return: 0
  */
 
-int main(void)
+int main_cd(void)
 {
 	char *args[] = {"cd", "/path/to/directory", NULL};
 
