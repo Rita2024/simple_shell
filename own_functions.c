@@ -56,11 +56,12 @@ int own_help(char **args)
 
 /**
  * main - main function
- *
+ * @argc: argument count
+ * @args: argument vector
  * Return: result
  */
 
-int main(void)
+int main(int argc, char **args)
 {
 	char *args[] = {NULL};
 
