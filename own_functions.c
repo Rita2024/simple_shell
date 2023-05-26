@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 
 /**
- * own_exit - exit shell
+ * own_exit - exit or terminate the shell
  * @args: command
  * Return: result
  */
@@ -27,6 +27,8 @@ int own_env(char **args)
 {
 	char **env = environ;
 
+	if (strcmp(args[0], "env") == 0)
+	{
 	while (*env)
 	{
 		printf("%s\n", *env);
@@ -36,43 +38,30 @@ int own_env(char **args)
 }
 
 /**
- * own_help - help
+ * own_help - display help message
  * @args: command
  * Return: result
  */
 
 int own_help(char **args)
 {
-	printf("=== Custom Shell Help ===\n");
-	printf("Available commands:\n");
-	printf("cd [directory] - Change the current directory\n");
-	printf("exit - Terminate the shell\n");
-	printf("env - Display environment variables\n");
-	printf("help - Display this help message\n");
-	return (1);
-}
-
-/**
- * own_cd - change directory
- * @args: command
- * Return: result
- */
-
-int own_cd(char **args)
-{
-	if (strcmp(args[0], "cd") == 0)
+	if (args[0] == NULL)
 	{
-		if (args[1] == NULL)
-		{
-			fprintf(stderr, "Expected argument to \"cd\"\n");
-		}
-		else
-		{
-			if (chdir(args[1]) != 0)
-			{
-				perror("chdir");
-			}
-		}
+		return (1);
+	}
+	else
+	{
+		printf("=== Custom Shell Help ===\n");
+		printf("Available commands:\n");
+		printf("cd [directory] - Change the current directory\n");
+		printf("exit - Terminate the shell\n");
+		printf("env - Display environment variables\n");
+		printf("help - Display this help message\n");
+		return (1);
+	}
+	else if (strcmp(args[0], "help") == 0)
+	{
+		own_help(args);
 		return (1);
 	}
 }
