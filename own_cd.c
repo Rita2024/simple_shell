@@ -2,6 +2,7 @@
 
 /**
  * own_cd - change directory
+ * @args: command
  * Return: result
  */
 
