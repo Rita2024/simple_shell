@@ -53,3 +53,18 @@ int own_help(char **args)
 	printf("help - Display this help message\n");
 	return (1);
 }
+
+/**
+ * main - main function
+ *
+ * Return: result
+ */
+
+int main(void)
+{
+	char *args[] = {NULL};
+
+	own_help(args);
+
+	return (0);
+}
