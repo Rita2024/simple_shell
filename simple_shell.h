@@ -13,6 +13,21 @@
 #define TOK_DELIM " \t\r\n\a\""
 extern char **environ;
 
+/**
+ * struct builtin_func - functions to check for the
+ * @ptr: the string
+ * @execute_args: check if the command is a builtin or process.
+ * @args: arrays
+ */
+
+typedef struct builtin_func
+{
+	char **ptr;
+
+	int *execute_args;
+	char **args;
+} builtin_func_list;
+
 void interactive_shell(void);
 void non_interactive_shell(void);
 char *read_line(void);
