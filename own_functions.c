@@ -25,14 +25,16 @@ int own_exit(char **args)
 
 int own_env(char **args)
 {
-	char **env = environ;
+	int x = 0;
+	char *env_var;
 
-	while (*env)
+	while ((env_var = getenv(args[x])) != NULL)
 	{
-		printf("%s\n", *env);
-		env++;
+		printf("%s\n", env_var);
+		x++;
 	}
-	return (1);
+
+	return (0);
 }
 
 /**
@@ -50,18 +52,4 @@ int own_help(char **args)
 	printf("env - Display environment variables\n");
 	printf("help - Display this help message\n");
 	return (1);
-}
-
-/**
- * main - main function
- * Return: result
- */
-
-int main(void)
-{
-	char *args[] = {NULL};
-
-	own_env(args);
-
-	return (0);
 }
