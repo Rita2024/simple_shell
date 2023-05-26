@@ -45,6 +45,8 @@ int own_env(char **args)
 
 int own_help(char **args)
 {
+	args(void);
+
 	printf("=== Custom Shell Help ===\n");
 	printf("Available commands:\n");
 	printf("cd [directory] - Change the current directory\n");
@@ -52,20 +54,4 @@ int own_help(char **args)
 	printf("env - Display environment variables\n");
 	printf("help - Display this help message\n");
 	return (1);
-}
-
-/**
- * main - main function
- * @argc: argument count
- * @args: argument vector
- * Return: result
- */
-
-int main(int argc, char **args)
-{
-	char *args[] = {NULL};
-
-	own_help(args);
-
-	return (0);
 }
